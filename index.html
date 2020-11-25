@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        .container{
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="container">
+        <!-- add -->
+        <input type="text" id="one" placeholder="Enter Number"> +
+        <input type="text" id="two" placeholder="Enter Number">
+        <button onclick="add()">Result</button>
+        <p>your Result is: <span id="result"></span></p>
+        <br><br>
+        <!-- subtraction -->
+        <input type="text" id="three" placeholder="Enter Number"> -
+        <input type="text" id="four" placeholder="Enter Number">
+        <button onclick="sub()">Result</button>
+        <p>your Result is: <span id="s-result"></span></p>
+        <br><br>
+        <!-- passshow -->
+        <input type="password" name="" id="passtake" placeholder="Enter Your Password">
+        <button onclick="passshow()">click</button>
+        <p>Your Password is:<span id="passgiven"></span></p>
+        <br><br>
+        <!-- time -->
+        <input type="text" id="timetaken" placeholder="Enter time">
+        <button onclick="time()">search</button>
+        <p><span id="timegiven"></span></p>
+        <br>
+
+        <!-- Even/Odd -->
+        <h3>Even/Odd</h3>
+        <input placeholder="Enter Number" type="text" id="num">
+        <button onclick="evenOdd()">Search</button>
+        <p>Your number is: <b id="show"></b></p>
+
+        <!-- Double -->
+        <h3>Double</h3>
+        <input type="text" placeholder="Enter Number" id="givenum">
+        <button onclick="double()">click</button>
+        <p>Double number is:<b id="double-num"></b></p>
+    </div>
+
+    <script>
+        function add(){
+            var x = parseInt(document.getElementById("one").value);
+            var y = parseInt(document.getElementById("two").value);
+            var result = x+y;
+            document.getElementById("result").innerHTML=result;
+        }
+        function sub(){
+            var x = parseInt(document.getElementById("three").value);
+            var y = parseInt(document.getElementById("four").value);
+            var res = x-y;
+            document.getElementById("s-result").innerHTML=res;
+        }
+        function passshow(){
+            var x=document.getElementById("passtake").value;
+            document.getElementById("passgiven").innerHTML=x;
+        }
+        function time(){
+            var x = document.getElementById("timetaken").value;  
+            console.log(x);
+            if(x>0 && x<=12){
+                document.getElementById("timegiven").innerHTML="good Morning"}
+            else if(x>12 && x<=18){
+                document.getElementById("timegiven").innerHTML="good Evening"}
+            else if(x>18 && x<=24){
+                    document.getElementById("timegiven").innerHTML="Good night"}
+            else {
+                document.getElementById("timegiven").innerHTML="worng keyword"}
+
+        }
+
+        function evenOdd(){
+            var x =parseInt(document.getElementById("num").value);
+            if(x%2 == 0){
+                document.getElementById("show").innerHTML="even"
+            }
+            else {
+                document.getElementById("show").innerHTML="odd"
+
+            }
+        }
+
+        function double(){
+            var x = document.getElementById("givenum").value;
+            sum = x*2;
+            document.getElementById("double-num").innerHTML=sum;
+        }
+    </script>
+</body>
+</html>
